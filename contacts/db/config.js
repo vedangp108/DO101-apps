@@ -8,3 +8,11 @@ const pgconn = new Pool({
 });
   
 module.exports = { pgconn }
+
+const DB_CONFIG = process.env.DB_CONFIG;
+const { Pool } = require('pg');
+
+const pgconn = new Pool({
+    connectionString: DB_CONFIG,
+    ssl: false,
+});
